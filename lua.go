@@ -4,5 +4,6 @@ import "golua/lua"
 import "os"
 
 func main() {
-	lua.Main(os.Args)
+	L := lua.NewState()
+	lua.MainGo(L, os.Args)
 }
