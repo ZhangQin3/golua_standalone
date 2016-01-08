@@ -19,5 +19,5 @@ func test2(L *lua.State) int {
 }
 
 func Register(L *lua.State) {
-	L.RegisterFuncs("mod", lua.GoFuncs{"test2": test2, "test": test})
+	L.NewLib("mod", lua.GoFuncs{"test2": test2, "test": test})
 }
