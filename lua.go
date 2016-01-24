@@ -1,12 +1,16 @@
 package main
 
-import "os"
-import "golua/lua"
-import "golua_standalone/model"
+import (
+	"github.com/ZhangQin3/golua/lua"
+	"lua/lproc"
+	"lua/model"
+	"os"
+)
 
 func main() {
 	L := lua.NewState()
-	// Register go functions test and test2 in ./model/mod.go file to lua
+
 	mod.Register(L)
+	lproc.Register(L)
 	lua.MainGo(L, os.Args)
 }
